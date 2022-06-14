@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Temperature</title>
+    <link rel="stylesheet" href="mycss.css">
+    
+</head>
+<body>
+    <div id="temp">
+    <p id="text"> Temperature will be shown here in °C</p>
+</div>
+    <div id="search">
+    <input type="text" id="city" placeholder="Enter Your City's Name">
+    <button onclick="getdetails()" onkeypress="getdetails()">Submit</button>
+</div>
+    <script type="text/javascript">
+        document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        getdetails();
+    }
+});
+ 
+        function getdetails()
+        {
+            city=document.getElementById("city").value;
+           
+            httpRequest = new XMLHttpRequest();
+            url="https://api.weatherbit.io/v2.0/current?city="+city+"&key=c8d203663bbe4fde99962dc49d871322";
+            httpRequest.open("GET",url);
+            httpRequest.send();
+              
+            httpRequest.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200)
+                {
+                    user_data=JSON.parse(this.responseText);
+                    document.getElementById("text").innerHTML=user_data.data[0].temp;
+                    document.getElementById("text").style.color="White";
+                   
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

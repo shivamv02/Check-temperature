@@ -1,0 +1,41 @@
+body{
+    background-image: url("w.jpg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+}
+#temp{
+   margin-top: 10%;
+    height: 150px;
+
+
+}
+#search{
+    height: 120px;
+    
+}
+p{
+    font-size: 40px;
+}
+#search input{
+    height: 35px;
+    width:200px;
+   border-radius: 10px;
+   border-color: rgb(121, 118, 118);
+   outline: none;
+}
+#search button{
+    margin-left: 20px;
+    height: 38px;
+    width:100px;
+    border-radius: 10px;
+    border-color: rgb(121, 118, 118);
+    outline: none;
+}
+button:hover{
+    cursor: pointer;
+}
