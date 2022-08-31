@@ -36,7 +36,7 @@
                 if(this.readyState==4 && this.status==200)
                 {
                     user_data=JSON.parse(this.responseText);
-                    document.getElementById("text").innerHTML=user_data.data[0].temp+" C";
+                    document.getElementById("text").innerHTML=user_data.data[0].temp+" °C";
                     document.getElementById("text").style.color="White";
                    
                 }
